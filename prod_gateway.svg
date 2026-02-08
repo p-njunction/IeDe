@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#f8fafc"/>
+  <!-- Device Body -->
+  <rect x="50" y="100" width="300" height="120" rx="10" fill="#1e293b"/>
+  <rect x="50" y="100" width="300" height="120" rx="10" fill="url(#grad)" opacity="0.5"/>
+  <defs>
+      <linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#334155"/>
+          <stop offset="100%" stop-color="#0f172a"/>
+      </linearGradient>
+  </defs>
+  <!-- Antennas -->
+  <line x1="80" y1="100" x2="80" y2="50" stroke="#334155" stroke-width="8" stroke-linecap="round"/>
+  <line x1="320" y1="100" x2="320" y2="50" stroke="#334155" stroke-width="8" stroke-linecap="round"/>
+  <!-- LEDs -->
+  <circle cx="90" cy="160" r="5" fill="#2563eb"/>
+  <circle cx="110" cy="160" r="5" fill="#2563eb"/>
+  <circle cx="130" cy="160" r="5" fill="#10b981"/>
+  <!-- Ports -->
+  <rect x="250" y="140" width="80" height="40" fill="#0f172a"/>
+</svg>
