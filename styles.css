@@ -321,9 +321,7 @@ img {
 }
 
 /* Services Grid */
-.services-grid {
-    /* grid-template-columns: 1fr; (handled by general .grid) */
-}
+/* Services Grid - columns handled by general .grid */
 
 .card {
     background: var(--bg-card);
@@ -362,9 +360,7 @@ img {
 }
 
 /* Products Section */
-.products-grid {
-    /* grid-template-columns: 1fr; (handled by general .grid) */
-}
+/* Products Grid - columns handled by general .grid */
 
 .product-card {
     background: var(--bg-card);
