@@ -415,18 +415,91 @@ img {
 }
 
 /* Product Modal Specifics */
+/* Product Modal Specifics */
 .product-modal-content {
-    max-width: 800px;
-    /* Wider than RFQ modal */
+    max-width: 900px;
+    /* Increased width */
     width: 95%;
+    max-height: 90vh;
+    /* Prevent overflow on desktop */
+    margin: 2vh auto;
+    /* Center vertically */
     padding: 0;
     overflow: hidden;
+    /* rounded corners */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: 16px;
+    background: var(--bg-card);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
 .product-modal-body {
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
+    /* Enable scrolling */
+    flex: 1;
+    /* Take remaining space */
 }
+
+/* Close Button Styling */
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    line-height: 1;
+    color: var(--text-main);
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1001;
+    /* Ensure on top of everything */
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.modal-close:hover {
+    color: #ef4444;
+    /* Red hint on hover */
+    background: rgba(255, 255, 255, 0.9);
+    transform: rotate(90deg);
+}
+
+
+/* Case Study Modal Specifics */
+.cs-header-image {
+    width: 100%;
+    position: relative;
+}
+
+.cs-section {
+    margin-bottom: 2rem;
+}
+
+.cs-section h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cs-results-box h4 {
+    font-size: 1.2rem;
+}
+
+.cs-results-box li {
+    margin-bottom: 0.5rem;
+}
+
 
 
 
@@ -806,6 +879,10 @@ footer {
         /* Ensure it's visible */
         gap: 2rem;
         /* Restore original gap */
+        margin-left: auto;
+        /* Push to the right */
+        margin-right: 2rem;
+        /* Space between menu and actions */
     }
 
     .nav-menu a {
@@ -1065,6 +1142,47 @@ footer {
 }
 
 /* Floating Action Button */
+.cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    /* Floating slightly above bottom */
+    left: 50%;
+    transform: translateX(-50%) translateY(100%);
+    width: 90%;
+    max-width: 600px;
+    background: #0f172a;
+    /* Always dark slate */
+    color: #ffffff;
+    /* Always white text */
+    border: 2px solid var(--accent);
+    /* Accent border */
+    border-radius: 12px;
+    /* Rounded pill shape */
+    padding: 1.25rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    /* Strong shadow */
+    z-index: 9999;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Bouncy pop-up */
+}
+
+.cookie-banner.show {
+    transform: translateX(-50%) translateY(0);
+}
+
+.cookie-banner p {
+    margin: 0;
+    color: #e2e8f0;
+    /* Light text */
+    font-size: 0.95rem;
+    margin-right: 1.5rem;
+    flex: 1;
+    font-weight: 500;
+}
+
 .fab {
     position: fixed;
     bottom: 2rem;
@@ -1404,3 +1522,68 @@ body.dark-mode .navbar {
         transform: translateY(0);
     }
 }
+
+/ *   C o o k i e   C o n s e n t   B a n n e r   * /     . c o o k i e - b a n n e r    {
+                 p o s i t i o n :    f i x e d ;
+                 b o t t o m :    0 ;
+                 l e f t :    0 ;
+                 w i d t h :    1 0 0 % ;
+                 b a c k g r o u n d :    v a r ( - - b g - c a r d ) ;
+                 b o r d e r - t o p :    1 p x   s o l i d   v a r ( - - b o r d e r - c o l o r ) ;
+                 p a d d i n g :    1 r e m   2 r e m ;
+                 d i s p l a y :    f l e x ;
+                 a l i g n - i t e m s :    c e n t e r ;
+                 j u s t i f y - c o n t e n t :    s p a c e - b e t w e e n ;
+                 b o x - s h a d o w :    0   - 4 p x   1 0 p x   r g b a ( 0 ,    0 ,    0 ,    0 . 1 ) ;
+                 z - i n d e x :    2 0 0 0 ;
+                 / *   H i g h   z - i n d e x   * /             t r a n s f o r m :    t r a n s l a t e Y ( 1 0 0 % ) ;
+                 t r a n s i t i o n :    t r a n s f o r m   0 . 3 s   e a s e - i n - o u t ;
+         
+}
+
+         . c o o k i e - b a n n e r . s h o w    {
+                 t r a n s f o r m :    t r a n s l a t e Y ( 0 ) ;
+         
+}
+
+         . c o o k i e - b a n n e r   p    {
+                 m a r g i n :    0 ;
+                 c o l o r :    v a r ( - - t e x t - m a i n ) ;
+                 f o n t - s i z e :    0 . 9 r e m ;
+                 m a r g i n - r i g h t :    2 r e m ;
+                 f l e x :    1 ;
+         
+}
+
+         . c o o k i e - a c t i o n s    {
+                 d i s p l a y :    f l e x ;
+                 g a p :    1 r e m ;
+                 a l i g n - i t e m s :    c e n t e r ;
+         
+}
+
+         @ m e d i a   ( m a x - w i d t h :   7 6 8 p x )    {
+                 . c o o k i e - b a n n e r    {
+                             f l e x - d i r e c t i o n :    c o l u m n ;
+                             t e x t - a l i g n :    c e n t e r ;
+                             p a d d i n g :    1 . 5 r e m ;
+                             g a p :    1 r e m ;
+                     
+    }
+
+                     . c o o k i e - b a n n e r   p    {
+                             m a r g i n - r i g h t :    0 ;
+                             m a r g i n - b o t t o m :    0 . 5 r e m ;
+                     
+    }
+
+                     . c o o k i e - a c t i o n s    {
+                             w i d t h :    1 0 0 % ;
+                             j u s t i f y - c o n t e n t :    c e n t e r ;
+                     
+    }
+
+         
+}
+
+     

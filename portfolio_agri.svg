@@ -1,0 +1,9 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#1e293b"/>
+  <path d="M0 600 L800 600 L800 400 Q400 350 0 400 Z" fill="#334155"/>
+  <circle cx="200" cy="300" r="10" fill="#4ade80"/>
+  <circle cx="400" cy="250" r="10" fill="#4ade80"/>
+  <circle cx="600" cy="320" r="10" fill="#4ade80"/>
+  <path d="M200 300 Q400 250 600 320" stroke="#4ade80" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+  <text x="400" y="550" font-family="Arial" font-size="24" fill="#cbd5e1" text-anchor="middle">Precision Agriculture</text>
+</svg>

@@ -32,13 +32,6 @@
                 <img src="iede_logo.svg" alt="IeDe Technologies" style="height: 40px;">
                 <span>IeDe Technologies</span>
             </a>
-            <div class="nav-actions" style="display: flex; align-items: center; gap: 1rem;">
-                <button id="theme-toggle" aria-label="Toggle Dark Mode"
-                    style="background:none; border:none; font-size:1.2rem; cursor:pointer;">🌙</button>
-                <button class="nav-toggle" aria-label="toggle navigation">
-                    <span class="hamburger"></span>
-                </button>
-            </div>
             <ul class="nav-menu">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#services">Services</a></li>
@@ -47,6 +40,13 @@
                 <li><a href="#products">Products</a></li>
                 <li><a href="#contact" class="btn-primary">Contact</a></li>
             </ul>
+            <div class="nav-actions" style="display: flex; align-items: center; gap: 1rem;">
+                <button id="theme-toggle" aria-label="Toggle Dark Mode"
+                    style="background:none; border:none; font-size:1.2rem; cursor:pointer;">🌙</button>
+                <button class="nav-toggle" aria-label="toggle navigation">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -194,6 +194,60 @@
                     <div class="icon">⚙️</div>
                     <h3>Embedded Systems</h3>
                     <p>High-performance firmware development for microcontrollers (ARM, AVR, ESP32) and RTOS.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section bg-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Work</h2>
+                <div class="underline"></div>
+                <p class="section-subtitle">Real-world applications of our technology.</p>
+            </div>
+            <div class="grid portfolio-grid">
+                <!-- Case Study 1 -->
+                <div class="portfolio-card slide-up">
+                    <div class="portfolio-img" style="background-image: url('portfolio_factory.svg')">
+                        <span class="badge">Industrial IoT</span>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Smart Factory Automation</h3>
+                        <p>Implemented a full-scale IoT sensor network for a manufacturing plant, reducing downtime by
+                            40%.</p>
+                        <button class="link-arrow case-study-trigger" data-id="factory"
+                            style="background:none; border:none; padding:0; cursor:pointer;">View Case Study
+                            &rarr;</button>
+                    </div>
+                </div>
+                <!-- Case Study 2 -->
+                <div class="portfolio-card slide-up delay-1">
+                    <div class="portfolio-img" style="background-image: url('portfolio_agri.svg')">
+                        <span class="badge">AgriTech</span>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Precision Agriculture System</h3>
+                        <p>Deployed 500+ LoRaWAN sensors for real-time soil monitoring, optimizing water usage by 25%.
+                        </p>
+                        <button class="link-arrow case-study-trigger" data-id="agri"
+                            style="background:none; border:none; padding:0; cursor:pointer;">View Case Study
+                            &rarr;</button>
+                    </div>
+                </div>
+                <!-- Case Study 3 -->
+                <div class="portfolio-card slide-up delay-2">
+                    <div class="portfolio-img" style="background-image: url('portfolio_city.svg')">
+                        <span class="badge">Smart City</span>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Urban Traffic Management</h3>
+                        <p>AI-powered camera system for adaptive traffic signal control in high-congestion zones.</p>
+                        <button class="link-arrow case-study-trigger" data-id="city"
+                            style="background:none; border:none; padding:0; cursor:pointer;">View Case Study
+                            &rarr;</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -475,14 +529,7 @@
     <footer>
         <div class="container footer-content">
             <br>
-            <div class="newsletter-form" style="margin-top: 1.5rem; max-width: 400px;">
-                <h4 style="margin-bottom:0.5rem; color:var(--primary);">Subscribe to our Newsletter</h4>
-                <form style="display:flex; gap:0.5rem;" onsubmit="event.preventDefault(); alert('Subscribed!');">
-                    <input type="email" placeholder="Enter email"
-                        style="padding:0.5rem; border-radius:4px; border:1px solid var(--border-color); flex:1;">
-                    <button type="submit" class="btn-primary" style="padding:0.5rem 1rem;">Go</button>
-                </form>
-            </div>
+
 
             <p>&copy; 2026 IeDe Technologies. All rights reserved.</p>
             <div class="visitor-counter-wrapper">

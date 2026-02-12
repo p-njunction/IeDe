@@ -100,48 +100,101 @@ document.addEventListener('DOMContentLoaded', () => {
     // Dark Mode Toggle
     const themeToggle = document.getElementById('theme-toggle');
     if (themeToggle) {
+        // Product Data
         const productData = {
             'IeDe Gateway X1': {
-                subtitle: 'Universal Industrial IoT Gateway',
-                gallery: ['prod_gateway.svg', 'tech_gateway.svg'],
-                description: 'The X1 is a ruggedized edge gateway designed to bridge the gap between legacy industrial equipment and modern cloud infrastructure. It supports a wide range of protocols ensuring compatibility with 99% of factory floor devices.',
-                specs: ['Protocols: MQTT, CoAP, Modbus', 'Connectivity: Wi-Fi 6, 4G/5G', 'Processor: Quad-core ARM', 'Operating Temp: -40°C to 85°C']
+                subtitle: "Universal IoT Gateway",
+                description: "The IeDe Gateway X1 is a robust, industrial-grade edge gateway designed to bridge the gap between legacy machinery and modern cloud platforms. It supports a wide range of protocols including MQTT, CoAP, Modbus, and HTTP, making it the perfect central hub for your diverse sensor network. With on-board edge processing capabilities, it filters and aggregates data locally, reducing bandwidth costs and latency.",
+                specs: ["Protocols: MQTT, CoAP, Modbus TCP/RTU, HTTP", "Connectivity: Wi-Fi, Ethernet, 4G LTE", "Processor: Dual-Core ARM Cortex-A7", "OS: Linux-based (Yocto)", "Power: 12-24V DC"],
+                image: "prod_gateway.svg",
+                thumbnails: ["tech_gateway.svg", "prod_gateway.svg"],
+                tech: true
             },
             'DataSense Cloud': {
-                subtitle: 'Intelligent Analytics Platform',
-                gallery: ['prod_dashboard.svg', 'tech_dashboard.svg'],
-                description: 'DataSense Cloud transforms raw sensor data into actionable insights. Customizable dashboards, real-time alerting, and predictive maintenance models help you optimize operations.',
-                specs: ['Real-time Visualization', 'RBAC Security', 'Automated Reporting', 'API Integration']
+                subtitle: "Real-time Analytics Dashboard",
+                description: "DataSense Cloud is a comprehensive visualization platform that turns raw sensor data into actionable insights. Monitor your fleet health, track environmental conditions, and set up automated alerts for anomalies. Its intuitive drag-and-drop interface allows you to create custom dashboards tailored to your specific operational needs.",
+                specs: ["Real-time Data Visualization", "Customizable Widgets", "Role-based Access Control", "Automated Email/SMS Alerts", "REST API for 3rd Party Integration"],
+                image: "prod_dashboard.svg",
+                thumbnails: ["tech_dashboard.svg", "prod_dashboard.svg"],
+                tech: true
             },
             'SecureEdge Module': {
-                subtitle: 'Hardware Root-of-Trust',
-                gallery: ['prod_module.svg', 'tech_module.svg'],
-                description: 'Ensure the integrity of your IoT network with the SecureEdge Module. It provides hardware-based key storage and cryptographic acceleration to protect against spoofing.',
-                specs: ['AES-256, RSA-4096', 'Interface: SPI, I2C', 'FIPS 140-2 Level 3', 'Secure Boot']
+                subtitle: "Hardware Security Module",
+                description: "Security is paramount in the IoT capability. The SecureEdge Module provides hardware-based encryption and key storage, ensuring that your data remains tamper-proof from the sensor to the cloud. Ideally suited for critical infrastructure and sensitive industrial applications.",
+                specs: ["Encryption: AES-256, RSA-2048", "Secure Boot & Key Storage", "Interface: SPI, I2C", "Compliance: FIPS 140-2 Level 2"],
+                image: "prod_module.svg",
+                thumbnails: ["tech_module.svg", "prod_module.svg"],
+                tech: true
             },
             'SmartEdge Controller': {
-                subtitle: 'AI-Enabled PLC',
-                gallery: ['prod_controller.svg', 'tech_controller.svg'],
-                description: 'A next-gen PLC that combines traditional logic control with edge AI inferencing. Run TensorFlow Lite models directly on the controller.',
-                specs: ['AI Accelerator: 4 TOPS', '16 Digital I/O', 'IEC 61131-3 & Python', 'DIN Rail Mount']
+                subtitle: "AI-Enabled PLC",
+                description: "The SmartEdge Controller combines the reliability of a traditional PLC with the intelligence of modern AI. Capable of running lightweight inference models locally, it can make split-second decisions based on visual or sensor inputs without relying on cloud connectivity.",
+                specs: ["AI Accelerator: Neural Processing Unit (NPU)", "IO: 8x Digital In, 8x Digital Out, 4x Analog In", "Programming: Python, C++, IEC 61131-3", "Mounting: DIN Rail"],
+                image: "prod_controller.svg",
+                thumbnails: ["tech_controller.svg", "prod_controller.svg"],
+                tech: true
             },
             'AgriSense Node': {
-                subtitle: 'Long-Range Environmental Sensor',
-                gallery: ['prod_agri.svg', 'tech_agri.svg'],
-                description: 'Designed for precision agriculture, the AgriSense Node monitors soil health and micro-climates. Ultra-low power design ensures years of operation.',
-                specs: ['LoRaWAN (15km+)', 'Sensors: Moisture, pH, NPK', 'Battery: 5+ Years', 'IP67 Waterproof']
+                subtitle: "Long-Range Soil Monitor",
+                description: "Designed for vast agricultural fields, the AgriSense Node utilizes LoRaWAN technology to transmit soil moisture, temperature, and pH data over kilometers with minimal power consumption. Its ruggedized IP67 enclosure ensures durability in harsh weather conditions.",
+                specs: ["Comms: LoRaWAN 1.0.3", "Battery Life: 5+ Years", "Sensors: Capacitive Moisture, Temp, pH", "Range: Up to 15km (LoS)"],
+                image: "prod_agri.svg",
+                thumbnails: ["tech_agri.svg", "prod_agri.svg"],
+                tech: true
             },
             'VisionAI Cam': {
-                subtitle: 'Edge Computing Smart Camera',
-                gallery: ['prod_camera.svg', 'tech_camera.svg'],
-                description: 'Automate quality control and safety monitoring with VisionAI. This smart camera processes video streams locally to detect defects in real-time.',
-                specs: ['4K HDR Resolution', 'Onboard Object Detection', 'Local NVMe Storage', '60 FPS Processing']
+                subtitle: "Edge Computing Camera",
+                description: "VisionAI Cam is a smart camera system that processes video streams directly on the device. Perfect for automated quality control on assembly lines, intrusion detection, or safety monitoring, it sends only relevant metadata to the server, preserving bandwidth and privacy.",
+                specs: ["Resolution: 4K Ultra HD", "On-board AI: Object Detection, Face Recog", "Storage: SD Card + Cloud Sync", "Night Vision: IR Grid"],
+                image: "prod_camera.svg",
+                thumbnails: ["tech_camera.svg", "prod_camera.svg"],
+                tech: true
             }
         };
 
-        // Product Modal Logic
-        const productModal = document.getElementById('product-modal');
-        const productModalClose = document.getElementById('product-modal-close');
+        // Case Study Data
+        const caseStudyData = {
+            'factory': {
+                title: "Smart Factory Automation",
+                badge: "Industrial IoT",
+                headerImage: "portfolio_factory.svg",
+                challenge: "A leading automotive parts manufacturer faced frequent unplanned downtime due to motor failures on their assembly line. Manual inspections were infrequent and often missed early warning signs of overheating or vibration anomalies.",
+                solution: "IeDe Technologies implemented a comprehensive sensor network using our **IeDe Gateway X1** and vibration sensors. We deployed local edge processing to analyze vibration patterns in real-time. Data was aggregated on our **DataSense Cloud** for trend analysis and predictive maintenance alerts.",
+                results: [
+                    "**40% Reduction** in unplanned downtime within the first 6 months.",
+                    "**15% Increase** in overall equipment effectiveness (OEE).",
+                    "Saved approximately **$250,000** annually in maintenance and lost production costs."
+                ]
+            },
+            'agri': {
+                title: "Precision Agriculture System",
+                badge: "AgriTech",
+                headerImage: "portfolio_agri.svg",
+                challenge: "A large-scale grape vineyard struggled with water waste and uneven crop quality. Their blanket irrigation approach resulted in over-watering some zones while under-watering others, leading to fungal diseases and yield loss.",
+                solution: "We deployed 500+ **AgriSense Nodes** across the vineyard, communicating via a private LoRaWAN network. The system monitored soil moisture at 3 distinct depths. This data fed into an automated irrigation control system that triggered watering only when specific zones dropped below optimal moisture levels.",
+                results: [
+                    "**25% Savings** in water usage per season.",
+                    "**10% Increase** in grape yield quality (Brix levels).",
+                    "Significant reduction in fungicide usage due to controlled humidity."
+                ]
+            },
+            'city': {
+                title: "Urban Traffic Management",
+                badge: "Smart City",
+                headerImage: "portfolio_city.svg",
+                challenge: "The city's downtown district suffered from chronic gridlock during rush hours. Static traffic light timers were unable to adapt to fluctuating traffic volumes, causing long queues and increased emissions.",
+                solution: "IeDe installed **VisionAI Cams** at 20 major intersections. The cameras utilized edge AI to count vehicles and detect queue lengths in real-time. This data was sent to a central **SmartEdge Controller** which dynamically adjusted traffic light green-times to prioritize high-congestion lanes.",
+                results: [
+                    "**30% Reduction** in average wait times at intersections.",
+                    "**12% Decrease** in vehicle idling emissions.",
+                    "Improved emergency vehicle response times by clearing paths automatically."
+                ]
+            }
+        };
+
+        // --- Product Modal Logic ---
+        const modal = document.getElementById('product-modal');
+        const modalClose = document.getElementById('product-modal-close');
         const learnMoreBtns = document.querySelectorAll('.product-card .btn-text');
 
         // Elements to populate
@@ -386,6 +439,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Update display with animation effect
         visitorCountElement.innerText = count.toLocaleString();
+    }
+
+    // Cookie Consent Logic
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptCookiesBtn = document.getElementById('accept-cookies');
+    const declineCookiesBtn = document.getElementById('decline-cookies');
+
+    if (cookieBanner && acceptCookiesBtn && declineCookiesBtn) {
+        // Check if user has already made a choice
+        const consent = localStorage.getItem('cookie_consent');
+
+        if (!consent) {
+            // Show banner after a short delay
+            setTimeout(() => {
+                cookieBanner.classList.add('show');
+            }, 2000);
+        }
+
+        acceptCookiesBtn.addEventListener('click', () => {
+            localStorage.setItem('cookie_consent', 'accepted');
+            cookieBanner.classList.remove('show');
+        });
+
+        declineCookiesBtn.addEventListener('click', () => {
+            localStorage.setItem('cookie_consent', 'declined');
+            cookieBanner.classList.remove('show');
+        });
     }
 
 }); // End of DOMContentLoaded
