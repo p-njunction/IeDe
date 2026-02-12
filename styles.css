@@ -1,4 +1,4 @@
-:root {
+﻿:root {
     /* Color Palette - Light Theme High Contrast */
     --bg-dark: #ffffff;
     /* White background */
@@ -636,7 +636,7 @@ img {
 }
 
 .pm-specs li::before {
-    content: '✓';
+    content: 'âœ“';
     color: var(--accent);
     margin-right: 10px;
     font-weight: bold;
@@ -1047,7 +1047,7 @@ footer {
 }
 
 .quote::before {
-    content: "“";
+    content: "â€œ";
     font-size: 3rem;
     color: #e2e8f0;
     position: absolute;
@@ -1523,67 +1523,188 @@ body.dark-mode .navbar {
     }
 }
 
-/ *   C o o k i e   C o n s e n t   B a n n e r   * /     . c o o k i e - b a n n e r    {
-                 p o s i t i o n :    f i x e d ;
-                 b o t t o m :    0 ;
-                 l e f t :    0 ;
-                 w i d t h :    1 0 0 % ;
-                 b a c k g r o u n d :    v a r ( - - b g - c a r d ) ;
-                 b o r d e r - t o p :    1 p x   s o l i d   v a r ( - - b o r d e r - c o l o r ) ;
-                 p a d d i n g :    1 r e m   2 r e m ;
-                 d i s p l a y :    f l e x ;
-                 a l i g n - i t e m s :    c e n t e r ;
-                 j u s t i f y - c o n t e n t :    s p a c e - b e t w e e n ;
-                 b o x - s h a d o w :    0   - 4 p x   1 0 p x   r g b a ( 0 ,    0 ,    0 ,    0 . 1 ) ;
-                 z - i n d e x :    2 0 0 0 ;
-                 / *   H i g h   z - i n d e x   * /             t r a n s f o r m :    t r a n s l a t e Y ( 1 0 0 % ) ;
-                 t r a n s i t i o n :    t r a n s f o r m   0 . 3 s   e a s e - i n - o u t ;
-         
+/* Cookie Consent Banner */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border-color);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 2000;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
 }
 
-         . c o o k i e - b a n n e r . s h o w    {
-                 t r a n s f o r m :    t r a n s l a t e Y ( 0 ) ;
-         
+.cookie-banner.show {
+    transform: translateY(0);
 }
 
-         . c o o k i e - b a n n e r   p    {
-                 m a r g i n :    0 ;
-                 c o l o r :    v a r ( - - t e x t - m a i n ) ;
-                 f o n t - s i z e :    0 . 9 r e m ;
-                 m a r g i n - r i g h t :    2 r e m ;
-                 f l e x :    1 ;
-         
+.cookie-banner p {
+    margin: 0;
+    color: var(--text-main);
+    font-size: 0.9rem;
+    margin-right: 2rem;
+    flex: 1;
 }
 
-         . c o o k i e - a c t i o n s    {
-                 d i s p l a y :    f l e x ;
-                 g a p :    1 r e m ;
-                 a l i g n - i t e m s :    c e n t e r ;
-         
+.cookie-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
 }
 
-         @ m e d i a   ( m a x - w i d t h :   7 6 8 p x )    {
-                 . c o o k i e - b a n n e r    {
-                             f l e x - d i r e c t i o n :    c o l u m n ;
-                             t e x t - a l i g n :    c e n t e r ;
-                             p a d d i n g :    1 . 5 r e m ;
-                             g a p :    1 r e m ;
-                     
+@media (max-width: 768px) {
+    .cookie-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+        gap: 1rem;
     }
 
-                     . c o o k i e - b a n n e r   p    {
-                             m a r g i n - r i g h t :    0 ;
-                             m a r g i n - b o t t o m :    0 . 5 r e m ;
-                     
+    .cookie-banner p {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
     }
 
-                     . c o o k i e - a c t i o n s    {
-                             w i d t h :    1 0 0 % ;
-                             j u s t i f y - c o n t e n t :    c e n t e r ;
-                     
+    .cookie-actions {
+        width: 100%;
+        justify-content: center;
     }
-
-         
 }
 
-     
+/* Modal Specifics */
+.product-modal-content {
+    max-width: 1000px;
+    /* Increased from 800px */
+    width: 95%;
+    padding: 2.5rem;
+    /* Increased padding */
+}
+
+.product-modal-body {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    /* Give more space to text */
+    gap: 3rem;
+    /* Increased from 2rem */
+    text-align: left;
+    align-items: start;
+    /* Align top */
+}
+
+.pm-gallery-section {
+    position: sticky;
+    top: 0;
+}
+
+.pm-main-image {
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.pm-thumbnails {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+}
+
+.pm-thumb {
+    width: 70px;
+    /* Larger thumbnails */
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    opacity: 0.7;
+    transition: var(--transition);
+}
+
+.pm-thumb.active,
+.pm-thumb:hover {
+    border-color: var(--accent);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Case Study Specifics */
+.case-study-modal-content {
+    max-width: 700px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.case-study-modal-content .modal-close {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+}
+
+.case-study-modal-content .modal-body {
+    padding: 2rem;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.cs-header-img {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+}
+
+.cs-header-img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8));
+}
+
+.cs-header-img .badge {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    background: var(--accent);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .product-modal-body {
+        grid-template-columns: 1fr;
+    }
+}
+
+#pm-specs {
+    list-style-position: inside;
+    /* Prevent bullets from getting cut off */
+}
+
+#pm-specs li {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    padding-left: 0.5rem;
+}

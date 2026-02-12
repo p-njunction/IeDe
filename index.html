@@ -551,6 +551,52 @@
         💬
     </a>
 
+    <!-- Product Details Modal -->
+    <div id="product-modal" class="modal-overlay">
+        <div class="modal-content product-modal-content">
+            <button id="product-modal-close" class="modal-close">&times;</button>
+            <div class="modal-header">
+                <h3 id="pm-title">Product Name</h3>
+                <p id="pm-subtitle" class="section-subtitle" style="margin-top:0;">Subtitle</p>
+            </div>
+            <div class="modal-body product-modal-body">
+                <div class="pm-gallery-section">
+                    <img id="pm-image" src="" alt="Product Image" class="pm-main-image">
+                    <div id="pm-thumbnails" class="pm-thumbnails"></div>
+                </div>
+                <div class="pm-details-section">
+                    <p id="pm-description" style="margin-bottom:1.5rem; color:var(--text-muted);"></p>
+                    <h4 style="color:var(--primary); margin-bottom:0.5rem;">Technical Specifications</h4>
+                    <ul id="pm-specs" style="padding-left:1.5rem; color:var(--text-muted); line-height:1.6;"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Case Study Modal -->
+    <div id="case-study-modal" class="modal-overlay">
+        <div class="modal-content case-study-modal-content">
+            <button id="cs-modal-close" class="modal-close">&times;</button>
+
+            <div id="cs-header-img" class="cs-header-img">
+                <span id="cs-badge" class="badge">Badge</span>
+            </div>
+
+            <div class="modal-body" style="text-align: left;">
+                <h3 id="cs-title" style="margin:1rem 0 0.5rem; font-size:1.5rem;">Title</h3>
+
+                <h4 style="color:var(--accent); margin-top:1.5rem; margin-bottom:0.5rem;">The Challenge</h4>
+                <p id="cs-challenge" style="color:var(--text-muted); line-height:1.6;"></p>
+
+                <h4 style="color:var(--accent); margin-top:1.5rem; margin-bottom:0.5rem;">Our Solution</h4>
+                <p id="cs-solution" style="color:var(--text-muted); line-height:1.6;"></p>
+
+                <h4 style="color:var(--accent); margin-top:1.5rem; margin-bottom:0.5rem;">Key Results</h4>
+                <ul id="cs-results" style="padding-left:1.5rem; color:var(--text-muted); line-height:1.6;"></ul>
+            </div>
+        </div>
+    </div>
+
     <!-- Cookie Consent Banner -->
     <div id="cookie-banner" class="cookie-banner">
         <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.

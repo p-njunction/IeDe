@@ -99,174 +99,241 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Dark Mode Toggle
     const themeToggle = document.getElementById('theme-toggle');
-    if (themeToggle) {
-        // Product Data
-        const productData = {
-            'IeDe Gateway X1': {
-                subtitle: "Universal IoT Gateway",
-                description: "The IeDe Gateway X1 is a robust, industrial-grade edge gateway designed to bridge the gap between legacy machinery and modern cloud platforms. It supports a wide range of protocols including MQTT, CoAP, Modbus, and HTTP, making it the perfect central hub for your diverse sensor network. With on-board edge processing capabilities, it filters and aggregates data locally, reducing bandwidth costs and latency.",
-                specs: ["Protocols: MQTT, CoAP, Modbus TCP/RTU, HTTP", "Connectivity: Wi-Fi, Ethernet, 4G LTE", "Processor: Dual-Core ARM Cortex-A7", "OS: Linux-based (Yocto)", "Power: 12-24V DC"],
-                image: "prod_gateway.svg",
-                thumbnails: ["tech_gateway.svg", "prod_gateway.svg"],
-                tech: true
-            },
-            'DataSense Cloud': {
-                subtitle: "Real-time Analytics Dashboard",
-                description: "DataSense Cloud is a comprehensive visualization platform that turns raw sensor data into actionable insights. Monitor your fleet health, track environmental conditions, and set up automated alerts for anomalies. Its intuitive drag-and-drop interface allows you to create custom dashboards tailored to your specific operational needs.",
-                specs: ["Real-time Data Visualization", "Customizable Widgets", "Role-based Access Control", "Automated Email/SMS Alerts", "REST API for 3rd Party Integration"],
-                image: "prod_dashboard.svg",
-                thumbnails: ["tech_dashboard.svg", "prod_dashboard.svg"],
-                tech: true
-            },
-            'SecureEdge Module': {
-                subtitle: "Hardware Security Module",
-                description: "Security is paramount in the IoT capability. The SecureEdge Module provides hardware-based encryption and key storage, ensuring that your data remains tamper-proof from the sensor to the cloud. Ideally suited for critical infrastructure and sensitive industrial applications.",
-                specs: ["Encryption: AES-256, RSA-2048", "Secure Boot & Key Storage", "Interface: SPI, I2C", "Compliance: FIPS 140-2 Level 2"],
-                image: "prod_module.svg",
-                thumbnails: ["tech_module.svg", "prod_module.svg"],
-                tech: true
-            },
-            'SmartEdge Controller': {
-                subtitle: "AI-Enabled PLC",
-                description: "The SmartEdge Controller combines the reliability of a traditional PLC with the intelligence of modern AI. Capable of running lightweight inference models locally, it can make split-second decisions based on visual or sensor inputs without relying on cloud connectivity.",
-                specs: ["AI Accelerator: Neural Processing Unit (NPU)", "IO: 8x Digital In, 8x Digital Out, 4x Analog In", "Programming: Python, C++, IEC 61131-3", "Mounting: DIN Rail"],
-                image: "prod_controller.svg",
-                thumbnails: ["tech_controller.svg", "prod_controller.svg"],
-                tech: true
-            },
-            'AgriSense Node': {
-                subtitle: "Long-Range Soil Monitor",
-                description: "Designed for vast agricultural fields, the AgriSense Node utilizes LoRaWAN technology to transmit soil moisture, temperature, and pH data over kilometers with minimal power consumption. Its ruggedized IP67 enclosure ensures durability in harsh weather conditions.",
-                specs: ["Comms: LoRaWAN 1.0.3", "Battery Life: 5+ Years", "Sensors: Capacitive Moisture, Temp, pH", "Range: Up to 15km (LoS)"],
-                image: "prod_agri.svg",
-                thumbnails: ["tech_agri.svg", "prod_agri.svg"],
-                tech: true
-            },
-            'VisionAI Cam': {
-                subtitle: "Edge Computing Camera",
-                description: "VisionAI Cam is a smart camera system that processes video streams directly on the device. Perfect for automated quality control on assembly lines, intrusion detection, or safety monitoring, it sends only relevant metadata to the server, preserving bandwidth and privacy.",
-                specs: ["Resolution: 4K Ultra HD", "On-board AI: Object Detection, Face Recog", "Storage: SD Card + Cloud Sync", "Night Vision: IR Grid"],
-                image: "prod_camera.svg",
-                thumbnails: ["tech_camera.svg", "prod_camera.svg"],
-                tech: true
-            }
-        };
-
-        // Case Study Data
-        const caseStudyData = {
-            'factory': {
-                title: "Smart Factory Automation",
-                badge: "Industrial IoT",
-                headerImage: "portfolio_factory.svg",
-                challenge: "A leading automotive parts manufacturer faced frequent unplanned downtime due to motor failures on their assembly line. Manual inspections were infrequent and often missed early warning signs of overheating or vibration anomalies.",
-                solution: "IeDe Technologies implemented a comprehensive sensor network using our **IeDe Gateway X1** and vibration sensors. We deployed local edge processing to analyze vibration patterns in real-time. Data was aggregated on our **DataSense Cloud** for trend analysis and predictive maintenance alerts.",
-                results: [
-                    "**40% Reduction** in unplanned downtime within the first 6 months.",
-                    "**15% Increase** in overall equipment effectiveness (OEE).",
-                    "Saved approximately **$250,000** annually in maintenance and lost production costs."
-                ]
-            },
-            'agri': {
-                title: "Precision Agriculture System",
-                badge: "AgriTech",
-                headerImage: "portfolio_agri.svg",
-                challenge: "A large-scale grape vineyard struggled with water waste and uneven crop quality. Their blanket irrigation approach resulted in over-watering some zones while under-watering others, leading to fungal diseases and yield loss.",
-                solution: "We deployed 500+ **AgriSense Nodes** across the vineyard, communicating via a private LoRaWAN network. The system monitored soil moisture at 3 distinct depths. This data fed into an automated irrigation control system that triggered watering only when specific zones dropped below optimal moisture levels.",
-                results: [
-                    "**25% Savings** in water usage per season.",
-                    "**10% Increase** in grape yield quality (Brix levels).",
-                    "Significant reduction in fungicide usage due to controlled humidity."
-                ]
-            },
-            'city': {
-                title: "Urban Traffic Management",
-                badge: "Smart City",
-                headerImage: "portfolio_city.svg",
-                challenge: "The city's downtown district suffered from chronic gridlock during rush hours. Static traffic light timers were unable to adapt to fluctuating traffic volumes, causing long queues and increased emissions.",
-                solution: "IeDe installed **VisionAI Cams** at 20 major intersections. The cameras utilized edge AI to count vehicles and detect queue lengths in real-time. This data was sent to a central **SmartEdge Controller** which dynamically adjusted traffic light green-times to prioritize high-congestion lanes.",
-                results: [
-                    "**30% Reduction** in average wait times at intersections.",
-                    "**12% Decrease** in vehicle idling emissions.",
-                    "Improved emergency vehicle response times by clearing paths automatically."
-                ]
-            }
-        };
-
-        // --- Product Modal Logic ---
-        const modal = document.getElementById('product-modal');
-        const modalClose = document.getElementById('product-modal-close');
-        const learnMoreBtns = document.querySelectorAll('.product-card .btn-text');
-
-        // Elements to populate
-        const pmImage = document.getElementById('pm-image');
-        const pmThumbnails = document.getElementById('pm-thumbnails');
-        const pmTitle = document.getElementById('pm-title');
-        const pmSubtitle = document.getElementById('pm-subtitle');
-        const pmDescription = document.getElementById('pm-description');
-        const pmSpecs = document.getElementById('pm-specs');
-
-        const closeProductModal = () => {
-            if (productModal) productModal.classList.remove('open');
-        };
-
-        if (productModalClose) {
-            productModalClose.addEventListener('click', closeProductModal);
+    // Product Data
+    const productData = {
+        'IeDe Gateway X1': {
+            subtitle: "Universal IoT Gateway",
+            description: "The IeDe Gateway X1 is a robust, industrial-grade edge gateway designed to bridge the gap between legacy machinery and modern cloud platforms. It supports a wide range of protocols including MQTT, CoAP, Modbus, and HTTP, making it the perfect central hub for your diverse sensor network. With on-board edge processing capabilities, it filters and aggregates data locally, reducing bandwidth costs and latency.",
+            specs: ["Protocols: MQTT, CoAP, Modbus TCP/RTU, HTTP", "Connectivity: Wi-Fi, Ethernet, 4G LTE", "Processor: Dual-Core ARM Cortex-A7", "OS: Linux-based (Yocto)", "Power: 12-24V DC"],
+            image: "prod_gateway.svg",
+            thumbnails: ["tech_gateway.svg", "prod_gateway.svg"],
+            tech: true
+        },
+        'DataSense Cloud': {
+            subtitle: "Real-time Analytics Dashboard",
+            description: "DataSense Cloud is a comprehensive visualization platform that turns raw sensor data into actionable insights. Monitor your fleet health, track environmental conditions, and set up automated alerts for anomalies. Its intuitive drag-and-drop interface allows you to create custom dashboards tailored to your specific operational needs.",
+            specs: ["Real-time Data Visualization", "Customizable Widgets", "Role-based Access Control", "Automated Email/SMS Alerts", "REST API for 3rd Party Integration"],
+            image: "prod_dashboard.svg",
+            thumbnails: ["tech_dashboard.svg", "prod_dashboard.svg"],
+            tech: true
+        },
+        'SecureEdge Module': {
+            subtitle: "Hardware Security Module",
+            description: "Security is paramount in the IoT capability. The SecureEdge Module provides hardware-based encryption and key storage, ensuring that your data remains tamper-proof from the sensor to the cloud. Ideally suited for critical infrastructure and sensitive industrial applications.",
+            specs: ["Encryption: AES-256, RSA-2048", "Secure Boot & Key Storage", "Interface: SPI, I2C", "Compliance: FIPS 140-2 Level 2"],
+            image: "prod_module.svg",
+            thumbnails: ["tech_module.svg", "prod_module.svg"],
+            tech: true
+        },
+        'SmartEdge Controller': {
+            subtitle: "AI-Enabled PLC",
+            description: "The SmartEdge Controller combines the reliability of a traditional PLC with the intelligence of modern AI. Capable of running lightweight inference models locally, it can make split-second decisions based on visual or sensor inputs without relying on cloud connectivity.",
+            specs: ["AI Accelerator: Neural Processing Unit (NPU)", "IO: 8x Digital In, 8x Digital Out, 4x Analog In", "Programming: Python, C++, IEC 61131-3", "Mounting: DIN Rail"],
+            image: "prod_controller.svg",
+            thumbnails: ["tech_controller.svg", "prod_controller.svg"],
+            tech: true
+        },
+        'AgriSense Node': {
+            subtitle: "Long-Range Soil Monitor",
+            description: "Designed for vast agricultural fields, the AgriSense Node utilizes LoRaWAN technology to transmit soil moisture, temperature, and pH data over kilometers with minimal power consumption. Its ruggedized IP67 enclosure ensures durability in harsh weather conditions.",
+            specs: ["Comms: LoRaWAN 1.0.3", "Battery Life: 5+ Years", "Sensors: Capacitive Moisture, Temp, pH", "Range: Up to 15km (LoS)"],
+            image: "prod_agri.svg",
+            thumbnails: ["tech_agri.svg", "prod_agri.svg"],
+            tech: true
+        },
+        'VisionAI Cam': {
+            subtitle: "Edge Computing Camera",
+            description: "VisionAI Cam is a smart camera system that processes video streams directly on the device. Perfect for automated quality control on assembly lines, intrusion detection, or safety monitoring, it sends only relevant metadata to the server, preserving bandwidth and privacy.",
+            specs: ["Resolution: 4K Ultra HD", "On-board AI: Object Detection, Face Recog", "Storage: SD Card + Cloud Sync", "Night Vision: IR Grid"],
+            image: "prod_camera.svg",
+            thumbnails: ["tech_camera.svg", "prod_camera.svg"],
+            tech: true
         }
+    };
 
-        // Close on outside click
-        if (productModal) {
-            productModal.addEventListener('click', (e) => {
-                if (e.target === productModal) closeProductModal();
-            });
+    // Case Study Data
+    const caseStudyData = {
+        'factory': {
+            title: "Smart Factory Automation",
+            badge: "Industrial IoT",
+            headerImage: "portfolio_factory.svg",
+            challenge: "A leading automotive parts manufacturer faced frequent unplanned downtime due to motor failures on their assembly line. Manual inspections were infrequent and often missed early warning signs of overheating or vibration anomalies.",
+            solution: "IeDe Technologies implemented a comprehensive sensor network using our **IeDe Gateway X1** and vibration sensors. We deployed local edge processing to analyze vibration patterns in real-time. Data was aggregated on our **DataSense Cloud** for trend analysis and predictive maintenance alerts.",
+            results: [
+                "**40% Reduction** in unplanned downtime within the first 6 months.",
+                "**15% Increase** in overall equipment effectiveness (OEE).",
+                "Saved approximately **$250,000** annually in maintenance and lost production costs."
+            ]
+        },
+        'agri': {
+            title: "Precision Agriculture System",
+            badge: "AgriTech",
+            headerImage: "portfolio_agri.svg",
+            challenge: "A large-scale grape vineyard struggled with water waste and uneven crop quality. Their blanket irrigation approach resulted in over-watering some zones while under-watering others, leading to fungal diseases and yield loss.",
+            solution: "We deployed 500+ **AgriSense Nodes** across the vineyard, communicating via a private LoRaWAN network. The system monitored soil moisture at 3 distinct depths. This data fed into an automated irrigation control system that triggered watering only when specific zones dropped below optimal moisture levels.",
+            results: [
+                "**25% Savings** in water usage per season.",
+                "**10% Increase** in grape yield quality (Brix levels).",
+                "Significant reduction in fungicide usage due to controlled humidity."
+            ]
+        },
+        'city': {
+            title: "Urban Traffic Management",
+            badge: "Smart City",
+            headerImage: "portfolio_city.svg",
+            challenge: "The city's downtown district suffered from chronic gridlock during rush hours. Static traffic light timers were unable to adapt to fluctuating traffic volumes, causing long queues and increased emissions.",
+            solution: "IeDe installed **VisionAI Cams** at 20 major intersections. The cameras utilized edge AI to count vehicles and detect queue lengths in real-time. This data was sent to a central **SmartEdge Controller** which dynamically adjusted traffic light green-times to prioritize high-congestion lanes.",
+            results: [
+                "**30% Reduction** in average wait times at intersections.",
+                "**12% Decrease** in vehicle idling emissions.",
+                "Improved emergency vehicle response times by clearing paths automatically."
+            ]
         }
+    };
 
-        learnMoreBtns.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                const card = btn.closest('.product-card');
-                const title = card.querySelector('h3').innerText;
-                const data = productData[title];
+    // --- Product Modal Logic ---
+    const productModal = document.getElementById('product-modal');
+    const productModalClose = document.getElementById('product-modal-close');
+    const learnMoreBtns = document.querySelectorAll('.product-card .btn-text');
 
-                if (data && productModal) {
-                    pmTitle.innerText = title;
-                    pmSubtitle.innerText = data.subtitle;
-                    pmDescription.innerText = data.description;
+    // Elements to populate
+    const pmImage = document.getElementById('pm-image');
+    const pmThumbnails = document.getElementById('pm-thumbnails');
+    const pmTitle = document.getElementById('pm-title');
+    const pmSubtitle = document.getElementById('pm-subtitle');
+    const pmDescription = document.getElementById('pm-description');
+    const pmSpecs = document.getElementById('pm-specs');
 
-                    // Specs
-                    pmSpecs.innerHTML = '';
-                    data.specs.forEach(spec => {
-                        const li = document.createElement('li');
-                        li.innerText = spec;
-                        pmSpecs.appendChild(li);
-                    });
+    const closeProductModal = () => {
+        if (productModal) productModal.classList.remove('open');
+    };
 
-                    // Gallery Logic
-                    pmThumbnails.innerHTML = '';
-                    // Set first image as main
-                    pmImage.src = data.gallery[0];
-                    pmImage.alt = title; // Keep alt text for accessibility
+    if (productModalClose) {
+        productModalClose.addEventListener('click', closeProductModal);
+    }
 
-                    // Create thumbnails
-                    data.gallery.forEach(imgSrc => {
-                        const thumb = document.createElement('img');
-                        thumb.src = imgSrc;
-                        thumb.className = 'pm-thumb';
-                        if (imgSrc === data.gallery[0]) thumb.classList.add('active');
-
-                        thumb.addEventListener('click', () => {
-                            pmImage.src = imgSrc;
-                            document.querySelectorAll('.pm-thumb').forEach(t => t.classList.remove('active'));
-                            thumb.classList.add('active');
-                        });
-
-                        pmThumbnails.appendChild(thumb);
-                    });
-
-                    productModal.classList.add('open');
-                }
-            });
+    // Close on outside click
+    if (productModal) {
+        productModal.addEventListener('click', (e) => {
+            if (e.target === productModal) closeProductModal();
         });
+    }
 
+    learnMoreBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const card = btn.closest('.product-card');
+            const title = card.querySelector('h3').innerText;
+            const data = productData[title];
+
+            if (data && productModal) {
+                pmTitle.innerText = title;
+                pmSubtitle.innerText = data.subtitle;
+                pmDescription.innerText = data.description;
+
+                // Specs
+                pmSpecs.innerHTML = '';
+                data.specs.forEach(spec => {
+                    const li = document.createElement('li');
+                    li.innerText = spec;
+                    pmSpecs.appendChild(li);
+                });
+
+                // Gallery Logic
+                pmThumbnails.innerHTML = '';
+
+                // Determine main image source
+                const mainImageSrc = data.image || (data.thumbnails && data.thumbnails.length > 0 ? data.thumbnails[0] : '');
+                pmImage.src = mainImageSrc;
+                pmImage.alt = title;
+
+                // Create thumbnails
+                const images = data.thumbnails || [];
+                images.forEach(imgSrc => {
+                    const thumb = document.createElement('img');
+                    thumb.src = imgSrc;
+                    thumb.className = 'pm-thumb';
+                    if (imgSrc === mainImageSrc) thumb.classList.add('active');
+
+                    thumb.addEventListener('click', () => {
+                        pmImage.src = imgSrc;
+                        document.querySelectorAll('.pm-thumb').forEach(t => t.classList.remove('active'));
+                        thumb.classList.add('active');
+                    });
+
+                    pmThumbnails.appendChild(thumb);
+                });
+
+                productModal.classList.add('open');
+            }
+        });
+    });
+
+    // --- Case Study Modal Logic ---
+    const csModal = document.getElementById('case-study-modal');
+    const csModalClose = document.getElementById('cs-modal-close');
+    const csTriggers = document.querySelectorAll('.case-study-trigger');
+
+    // Canvas elements
+    const csHeaderImg = document.getElementById('cs-header-img');
+    const csBadge = document.getElementById('cs-badge');
+    const csTitle = document.getElementById('cs-title');
+    const csChallenge = document.getElementById('cs-challenge');
+    const csSolution = document.getElementById('cs-solution');
+    const csResults = document.getElementById('cs-results');
+
+    const closeCsModal = () => {
+        if (csModal) csModal.classList.remove('open');
+    };
+
+    if (csModalClose) {
+        csModalClose.addEventListener('click', closeCsModal);
+    }
+
+    if (csModal) {
+        csModal.addEventListener('click', (e) => {
+            if (e.target === csModal) closeCsModal();
+        });
+    }
+
+    const formatText = (text) => {
+        return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    };
+
+    csTriggers.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            // Stop propagation to prevent card click issues if any
+            e.stopPropagation();
+
+            const id = btn.getAttribute('data-id');
+            const data = caseStudyData[id];
+
+            if (data && csModal) {
+                // Populate
+                csTitle.innerText = data.title;
+                csBadge.innerText = data.badge;
+
+                csChallenge.innerHTML = formatText(data.challenge);
+                csSolution.innerHTML = formatText(data.solution);
+
+                // Results
+                csResults.innerHTML = '';
+                data.results.forEach(res => {
+                    const li = document.createElement('li');
+                    li.innerHTML = formatText(res);
+                    csResults.appendChild(li);
+                });
+
+                // Header Image
+                csHeaderImg.style.backgroundImage = `url('${data.headerImage}')`;
+
+                csModal.classList.add('open');
+            }
+        });
+    });
+
+    if (themeToggle) {
         // Check saved preference
         if (localStorage.getItem('theme') === 'dark') {
             document.body.classList.add('dark-mode');
@@ -300,6 +367,7 @@ document.addEventListener('DOMContentLoaded', () => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
+            if (targetId === '#' || targetId === '') return;
             const targetElement = document.querySelector(targetId);
 
             if (targetElement) {
