@@ -32,9 +32,13 @@
                 <img src="iede_logo.svg" alt="IeDe Technologies" style="height: 40px;">
                 <span>IeDe Technologies</span>
             </a>
-            <button class="nav-toggle" aria-label="toggle navigation">
-                <span class="hamburger"></span>
-            </button>
+            <div class="nav-actions" style="display: flex; align-items: center; gap: 1rem;">
+                <button id="theme-toggle" aria-label="Toggle Dark Mode"
+                    style="background:none; border:none; font-size:1.2rem; cursor:pointer;">🌙</button>
+                <button class="nav-toggle" aria-label="toggle navigation">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
             <ul class="nav-menu">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#services">Services</a></li>
@@ -241,6 +245,66 @@
         </div>
     </section>
 
+    </section>
+
+    <!-- How We Work (Roadmap) Section -->
+    <section id="roadmap" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>How We Work</h2>
+                <div class="underline"></div>
+                <p class="section-subtitle">From concept to deployment, we follow a rigorous agile process.</p>
+            </div>
+            <div class="process-wrapper">
+                <div class="process-step fade-in">
+                    <div class="step-icon">🔍</div>
+                    <h3>Discovery</h3>
+                    <p>We analyze your requirements and feasibility.</p>
+                </div>
+                <div class="process-connector"></div>
+                <div class="process-step fade-in delay-1">
+                    <div class="step-icon">🎨</div>
+                    <h3>Design</h3>
+                    <p>Architecture planning and UI/UX prototyping.</p>
+                </div>
+                <div class="process-connector"></div>
+                <div class="process-step fade-in delay-2">
+                    <div class="step-icon">💻</div>
+                    <h3>Build</h3>
+                    <p>Agile development with regular updates.</p>
+                </div>
+                <div class="process-connector"></div>
+                <div class="process-step fade-in delay-3">
+                    <div class="step-icon">🚀</div>
+                    <h3>Deploy</h3>
+                    <p>Testing, launch, and ongoing support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section id="stats" class="section bg-primary text-white" style="background: var(--primary); color: white;">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <h3 class="counter" data-target="50">0</h3>
+                <p>Projects Delivered</p>
+            </div>
+            <div class="stat-item">
+                <h3 class="counter" data-target="12">0</h3>
+                <p>Years Experience</p>
+            </div>
+            <div class="stat-item">
+                <h3 class="counter" data-target="98">0</h3>
+                <p>% Client Satisfaction</p>
+            </div>
+            <div class="stat-item">
+                <h3 class="counter" data-target="24">0</h3>
+                <p>/7 Support Active</p>
+            </div>
+        </div>
+    </section>
+
     <!-- FAQ Section -->
     <section id="faq" class="section bg-darker">
         <div class="container">
@@ -308,6 +372,16 @@
 
     <footer>
         <div class="container footer-content">
+            <br>
+            <div class="newsletter-form" style="margin-top: 1.5rem; max-width: 400px;">
+                <h4 style="margin-bottom:0.5rem; color:var(--primary);">Subscribe to our Newsletter</h4>
+                <form style="display:flex; gap:0.5rem;" onsubmit="event.preventDefault(); alert('Subscribed!');">
+                    <input type="email" placeholder="Enter email"
+                        style="padding:0.5rem; border-radius:4px; border:1px solid var(--border-color); flex:1;">
+                    <button type="submit" class="btn-primary" style="padding:0.5rem 1rem;">Go</button>
+                </form>
+            </div>
+
             <p>&copy; 2026 IeDe Technologies. All rights reserved.</p>
             <div class="visitor-counter-wrapper">
                 Visitors: <span id="visitor-count" class="visitor-count">Loading...</span>
@@ -319,6 +393,10 @@
             </div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to Top"
+        style="display:none; position:fixed; bottom:6rem; right:2rem; width:40px; height:40px; background:var(--primary); color:white; border:none; border-radius:50%; align-items:center; justify-content:center; cursor:pointer; z-index:998;">↑</button>
 
     <!-- Floating Action Button -->
     <a href="#contact" class="fab" aria-label="Contact Us">

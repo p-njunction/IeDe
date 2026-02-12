@@ -45,23 +45,88 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Scroll Animations (Intersection Observer)
+    // Scroll Animation Observer
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.1
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target); // Only animate once
+
+                // Trigger Count Animation if it's the stats section
+                if (entry.target.id === 'stats' || entry.target.closest('#stats')) {
+                    startCounters();
+                }
             }
         });
     }, observerOptions);
 
-    const animatedElements = document.querySelectorAll('.slide-up, .fade-in');
-    animatedElements.forEach(el => observer.observe(el));
+    document.querySelectorAll('.fade-in, .slide-up').forEach(el => {
+        observer.observe(el);
+    });
+
+    // Stats Counter Animation
+    let counted = false;
+    function startCounters() {
+        if (counted) return;
+        const counters = document.querySelectorAll('.counter');
+        counters.forEach(counter => {
+            const target = +counter.getAttribute('data-target');
+            const duration = 2000; // ms
+            const increment = target / (duration / 16); // 60fps
+
+            let current = 0;
+            const updateCount = () => {
+                current += increment;
+                if (current < target) {
+                    counter.innerText = Math.ceil(current);
+                    requestAnimationFrame(updateCount);
+                } else {
+                    counter.innerText = target + "+";
+                }
+            };
+            updateCount();
+        });
+        counted = true;
+    }
+
+    // Observe Stats Section
+    const statsSection = document.getElementById('stats');
+    if (statsSection) observer.observe(statsSection);
+
+
+    // Dark Mode Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        // Check saved preference
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+            themeToggle.innerText = '☀️';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            themeToggle.innerText = isDark ? '☀️' : '🌙';
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+    }
+
+    // Back to Top Button
+    const backToTopBtn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopBtn.style.display = 'flex';
+        } else {
+            backToTopBtn.style.display = 'none';
+        }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 
     // Smooth Scrolling for Anchor Links (Optional polish, natively supported by css html { scroll-behavior: smooth })
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
