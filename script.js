@@ -16,7 +16,32 @@ document.addEventListener('DOMContentLoaded', () => {
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
-            navToggle.classList.remove('active');
+            // navToggle.classList.remove('active'); // Optional if toggle icon animates
+        });
+    });
+
+    // FAQ Accordion
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const answer = question.nextElementSibling;
+
+            // Toggle active state
+            question.classList.toggle('active');
+
+            if (question.classList.contains('active')) {
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            } else {
+                answer.style.maxHeight = 0;
+            }
+
+            // Optional: Close others
+            faqQuestions.forEach(item => {
+                if (item !== question) {
+                    item.classList.remove('active');
+                    item.nextElementSibling.style.maxHeight = 0;
+                }
+            });
         });
     });
 
