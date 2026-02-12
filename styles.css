@@ -590,6 +590,19 @@ img {
     border-bottom: 1px solid var(--border-color);
 }
 
+/* Text alignment utilities */
+.about-content p,
+.product-info p,
+.portfolio-content p,
+.service-card p,
+.pm-description,
+.cs-challenge,
+.cs-solution,
+.cs-results li,
+.testimonial-card .quote {
+    text-align: justify;
+}
+
 .pm-content-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1740,90 +1753,91 @@ body.dark-mode .navbar {
     padding-left: 2rem;
     /* Make room for the icon */
     margin-bottom: 0.8rem;
-    display: flex;
+    align-items: flex-start;
+}
 
-    /* Dark Mode Variables */
-    body.dark-mode {
-        --bg-dark: #0f172a;
-        --bg-alt: #1e293b;
-        --bg-card: #1e293b;
-        --primary: #f8fafc;
-        /* Headings become white */
-        --text-main: #f8fafc;
-        --text-muted: #94a3b8;
-        --border-color: #334155;
-        --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
-    }
+/* Dark Mode Variables */
+body.dark-mode {
+    --bg-dark: #0f172a;
+    --bg-alt: #1e293b;
+    --bg-card: #1e293b;
+    --primary: #f8fafc;
+    /* Headings become white */
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border-color: #334155;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+}
 
-    /* Specific Dark Mode Fixes */
-    body.dark-mode .text-muted {
-        color: var(--text-muted) !important;
-    }
+/* Specific Dark Mode Fixes */
+body.dark-mode .text-muted {
+    color: var(--text-muted) !important;
+}
 
-    body.dark-mode .bg-alt {
-        background-color: var(--bg-alt) !important;
-    }
+body.dark-mode .bg-alt {
+    background-color: var(--bg-alt) !important;
+}
 
-    body.dark-mode .card {
-        background-color: var(--bg-card);
-        border-color: var(--border-color);
-    }
+body.dark-mode .card {
+    background-color: var(--bg-card);
+    border-color: var(--border-color);
+}
 
-    body.dark-mode .navbar {
-        background-color: rgba(15, 23, 42, 0.95);
-        border-bottom: 1px solid var(--border-color);
-    }
+body.dark-mode .navbar {
+    background-color: rgba(15, 23, 42, 0.95);
+    border-bottom: 1px solid var(--border-color);
+}
 
-    body.dark-mode .nav-menu a {
-        color: var(--text-main);
-    }
+body.dark-mode .nav-menu a {
+    color: var(--text-main);
+}
 
-    body.dark-mode .footer-links a {
-        color: var(--text-muted);
-    }
+body.dark-mode .footer-links a {
+    color: var(--text-muted);
+}
 
-    body.dark-mode .footer-links a:hover {
-        color: var(--accent);
-    }
+body.dark-mode .footer-links a:hover {
+    color: var(--accent);
+}
 
-    /* Fix Stats Section in Dark Mode */
-    body.dark-mode #stats {
-        background: var(--bg-alt) !important;
-        color: var(--text-main) !important;
-    }
+/* Fix Stats Section in Dark Mode */
+body.dark-mode #stats {
+    background: var(--bg-alt) !important;
+    color: var(--text-main) !important;
+}
 
-    body.dark-mode #stats h3 {
-        color: var(--accent) !important;
-    }
+body.dark-mode #stats h3 {
+    color: var(--accent) !important;
+}
 
-    body.dark-mode #stats p {
-        color: var(--text-muted);
-    }
+body.dark-mode #stats p {
+    color: var(--text-muted);
+}
 
-    /* Form Inputs in Dark Mode */
-    body.dark-mode input,
-    body.dark-mode textarea {
-        background-color: #334155;
-        color: white;
-        border-color: var(--border-color);
-    }
+/* Form Inputs in Dark Mode */
+body.dark-mode input,
+body.dark-mode textarea {
+    background-color: #334155;
+    color: white;
+    border-color: var(--border-color);
+}
 
-    body.dark-mode input::placeholder,
-    body.dark-mode textarea::placeholder {
-        color: #94a3b8;
-    }
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+    color: #94a3b8;
+}
 
-    /* Modal Dark Mode Tweaks */
-    body.dark-mode .modal-content {
-        background: var(--bg-card);
-        border: 1px solid var(--border-color);
-    }
+/* Modal Dark Mode Tweaks */
+body.dark-mode .modal-content {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+}
 
-    body.dark-mode .modal-close {
-        color: var(--text-main);
-    }
+body.dark-mode .modal-close {
+    color: var(--text-main);
+}
 
-    body.dark-mode .pm-description,
-    body.dark-mode .pm-specs li {
-        color: var(--text-muted);
-    }
+body.dark-mode .pm-description,
+body.dark-mode .pm-specs li {
+    color: var(--text-muted);
+}
