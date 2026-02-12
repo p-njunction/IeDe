@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#f8fafc"/>
+  <text x="20" y="30" font-family="monospace" fill="#64748b" font-size="14">PINOUT_DIAGRAM</text>
+  <!-- Chip -->
+  <rect x="100" y="70" width="200" height="160" fill="#0f172a"/>
+  <!-- Pins Left -->
+  <rect x="80" y="90" width="20" height="10" fill="#d4d4d8"/>
+  <rect x="80" y="120" width="20" height="10" fill="#d4d4d8"/>
+  <rect x="80" y="150" width="20" height="10" fill="#d4d4d8"/>
+  <rect x="80" y="180" width="20" height="10" fill="#d4d4d8"/>
+  <!-- Pins Right -->
+  <rect x="300" y="90" width="20" height="10" fill="#d4d4d8"/>
+  <rect x="300" y="120" width="20" height="10" fill="#d4d4d8"/>
+  <rect x="300" y="150" width="20" height="10" fill="#d4d4d8"/>
+  <rect x="300" y="180" width="20" height="10" fill="#d4d4d8"/>
+  <text x="140" y="150" font-family="sans-serif" fill="#fff" font-size="16" font-weight="bold">SECURE CORE</text>
+</svg>

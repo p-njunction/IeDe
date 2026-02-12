@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#f8fafc"/>
+  <rect x="60" y="80" width="280" height="140" rx="4" fill="#334155"/>
+  <rect x="80" y="100" width="60" height="40" fill="#0f172a"/> <!-- Screen -->
+  <circle cx="300" cy="120" r="15" fill="#ef4444"/> <!-- Stop Button -->
+  <circle cx="300" cy="170" r="15" fill="#22c55e"/> <!-- Start Button -->
+  <rect x="80" y="160" width="180" height="40" fill="#475569"/> <!-- Terminals -->
+</svg>

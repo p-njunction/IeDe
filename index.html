@@ -42,9 +42,10 @@
             <ul class="nav-menu">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#roadmap">Process</a></li>
                 <li><a href="#products">Products</a></li>
-                <li><a href="#team">Team</a></li>
-                <li><a href="#contact" class="btn-primary">Contact Us</a></li>
+                <li><a href="#contact" class="btn-primary">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -63,6 +64,27 @@
         </div>
     </section>
 
+    </section>
+
+    <!-- Trust Bar -->
+    <div class="trust-bar bg-darker">
+        <div class="container">
+            <p class="trust-label">Working with industry leaders</p>
+            <div class="trust-logos">
+                <a href="https://www.microsoft.com" target="_blank" rel="noopener noreferrer"><img
+                        src="logo_microsoft.svg" alt="Microsoft" class="trust-logo"></a>
+                <a href="https://aws.amazon.com" target="_blank" rel="noopener noreferrer"><img src="logo_aws.svg"
+                        alt="AWS" class="trust-logo"></a>
+                <a href="https://www.siemens.com" target="_blank" rel="noopener noreferrer"><img src="logo_siemens.svg"
+                        alt="Siemens" class="trust-logo"></a>
+                <a href="https://www.bosch.com" target="_blank" rel="noopener noreferrer"><img src="logo_bosch.svg"
+                        alt="Bosch" class="trust-logo"></a>
+                <a href="https://www.nvidia.com" target="_blank" rel="noopener noreferrer"><img src="logo_nvidia.svg"
+                        alt="NVIDIA" class="trust-logo"></a>
+            </div>
+        </div>
+    </div>
+
     <!-- About Section -->
     <section id="about" class="section">
         <div class="container">
@@ -77,6 +99,40 @@
             </div>
         </div>
     </section>
+
+    <!-- Product Details Modal -->
+    <div id="product-modal" class="modal-overlay">
+        <div class="modal-content product-modal-content">
+            <button class="modal-close" id="product-modal-close">&times;</button>
+            <div class="product-modal-body">
+                <div class="product-gallery-section">
+                    <div class="product-main-image">
+                        <img src="" alt="" id="pm-image">
+                    </div>
+                    <div class="product-thumbnails" id="pm-thumbnails">
+                        <!-- Dynamic Thumbnails -->
+                    </div>
+                </div>
+                <div class="product-modal-info">
+                    <h3 id="pm-title">Product Title</h3>
+                    <p class="pm-subtitle" id="pm-subtitle">Subtitle</p>
+                    <div class="pm-content-grid">
+                        <div class="pm-description-col">
+                            <div class="pm-description" id="pm-description">
+                                <!-- Dynamic content -->
+                            </div>
+                        </div>
+                        <div class="pm-specs-col">
+                            <div class="pm-specs-title">Technical Specifications</div>
+                            <ul class="pm-specs" id="pm-specs">
+                                <!-- Dynamic specs -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Services Section -->
     <section id="services" class="section bg-darker">
@@ -151,6 +207,7 @@
                 <div class="underline"></div>
             </div>
             <div class="grid products-grid">
+                <!-- Existing Product 1 -->
                 <div class="product-card slide-up">
                     <img src="prod_gateway.svg" alt="IoT Gateway" class="product-image">
                     <div class="product-info">
@@ -159,6 +216,7 @@
                         <a href="#" class="btn-text">Learn More &rarr;</a>
                     </div>
                 </div>
+                <!-- Existing Product 2 -->
                 <div class="product-card slide-up delay-1">
                     <img src="prod_dashboard.svg" alt="Analytics Dashboard" class="product-image">
                     <div class="product-info">
@@ -167,11 +225,39 @@
                         <a href="#" class="btn-text">Learn More &rarr;</a>
                     </div>
                 </div>
+                <!-- Existing Product 3 -->
                 <div class="product-card slide-up delay-2">
                     <img src="prod_module.svg" alt="Security Module" class="product-image">
                     <div class="product-info">
                         <h3>SecureEdge Module</h3>
                         <p>Hardware security module for encrypting data at the edge.</p>
+                        <a href="#" class="btn-text">Learn More &rarr;</a>
+                    </div>
+                </div>
+                <!-- New Product 4 -->
+                <div class="product-card slide-up">
+                    <img src="prod_controller.svg" alt="SmartEdge Controller" class="product-image">
+                    <div class="product-info">
+                        <h3>SmartEdge Controller</h3>
+                        <p>Programmable logic controller with integrated AI inferencing capabilities.</p>
+                        <a href="#" class="btn-text">Learn More &rarr;</a>
+                    </div>
+                </div>
+                <!-- New Product 5 -->
+                <div class="product-card slide-up delay-1">
+                    <img src="prod_agri.svg" alt="AgriSense Node" class="product-image">
+                    <div class="product-info">
+                        <h3>AgriSense Node</h3>
+                        <p>Long-range LoRaWAN sensor for soil moisture and environmental monitoring.</p>
+                        <a href="#" class="btn-text">Learn More &rarr;</a>
+                    </div>
+                </div>
+                <!-- New Product 6 -->
+                <div class="product-card slide-up delay-2">
+                    <img src="prod_camera.svg" alt="VisionAI Camera" class="product-image">
+                    <div class="product-info">
+                        <h3>VisionAI Cam</h3>
+                        <p>Edge-computing camera for automated quality control and surveillance.</p>
                         <a href="#" class="btn-text">Learn More &rarr;</a>
                     </div>
                 </div>
@@ -187,23 +273,33 @@
                 <div class="underline"></div>
             </div>
             <div class="grid team-grid">
+                <!-- C.K Varkey -->
                 <div class="team-card slide-up">
-                    <img src="team_male.svg" alt="Alex Chen" class="team-avatar">
-                    <h3>Alex Chen</h3>
-                    <span class="role">Chief Technology Officer</span>
-                    <p>Expert in Embedded Systems & AI.</p>
+                    <img src="team_male.svg" alt="C.K Varkey" class="team-avatar">
+                    <h3>C.K Varkey</h3>
+                    <span class="role">Managing Director</span>
+                    <p>Visionary leader guiding the strategic direction of IeDe.</p>
                 </div>
+                <!-- Anish C.V -->
                 <div class="team-card slide-up delay-1">
-                    <img src="team_female.svg" alt="Sarah Johnson" class="team-avatar">
-                    <h3>Sarah Johnson</h3>
-                    <span class="role">Lead Software Engineer</span>
-                    <p>Full-stack wizard specializing in Cloud IoT.</p>
+                    <img src="team_male.svg" alt="Anish C.V" class="team-avatar">
+                    <h3>Anish C.V</h3>
+                    <span class="role">Chief Executive Officer</span>
+                    <p>Driving innovation and technical excellence.</p>
                 </div>
+                <!-- Noel Anish Chirackal -->
                 <div class="team-card slide-up delay-2">
-                    <img src="team_male.svg" alt="Michael Ross" class="team-avatar">
-                    <h3>Michael Ross</h3>
-                    <span class="role">Head of Product</span>
-                    <p>Bridging customer needs with tech solutions.</p>
+                    <img src="team_male.svg" alt="Noel Anish Chirackal" class="team-avatar">
+                    <h3>Noel Anish Chirackal</h3>
+                    <span class="role">Director of Operations</span>
+                    <p>Overseeing project delivery and operational efficiency.</p>
+                </div>
+                <!-- Nathan Anish Chirackal -->
+                <div class="team-card slide-up delay-3">
+                    <img src="team_male.svg" alt="Nathan Anish Chirackal" class="team-avatar">
+                    <h3>Nathan Anish Chirackal</h3>
+                    <span class="role">Director of Product</span>
+                    <p>Leading product strategy and market expansion.</p>
                 </div>
             </div>
         </div>
@@ -258,26 +354,30 @@
             <div class="process-wrapper">
                 <div class="process-step fade-in">
                     <div class="step-icon">🔍</div>
-                    <h3>Discovery</h3>
-                    <p>We analyze your requirements and feasibility.</p>
+                    <h3>1. Discovery</h3>
+                    <p>We start by understanding your vision, analyzing market needs, and defining technical
+                        requirements to ensure a solid foundation.</p>
                 </div>
                 <div class="process-connector"></div>
                 <div class="process-step fade-in delay-1">
                     <div class="step-icon">🎨</div>
-                    <h3>Design</h3>
-                    <p>Architecture planning and UI/UX prototyping.</p>
+                    <h3>2. Design</h3>
+                    <p>Creating intuitive UI/UX prototypes and robust system architectures. We iterate until the
+                        solution aligns perfectly with your goals.</p>
                 </div>
                 <div class="process-connector"></div>
                 <div class="process-step fade-in delay-2">
                     <div class="step-icon">💻</div>
-                    <h3>Build</h3>
-                    <p>Agile development with regular updates.</p>
+                    <h3>3. Build</h3>
+                    <p>Agile development cycles with regular demos. We use modern, scalable tech stacks to build secure
+                        and high-performance software.</p>
                 </div>
                 <div class="process-connector"></div>
                 <div class="process-step fade-in delay-3">
                     <div class="step-icon">🚀</div>
-                    <h3>Deploy</h3>
-                    <p>Testing, launch, and ongoing support.</p>
+                    <h3>4. Deploy</h3>
+                    <p>Rigorous testing, seamless cloud deployment, and user training. We provide ongoing support to
+                        ensure long-term success.</p>
                 </div>
             </div>
         </div>
@@ -287,20 +387,20 @@
     <section id="stats" class="section bg-primary text-white" style="background: var(--primary); color: white;">
         <div class="container stats-grid">
             <div class="stat-item">
-                <h3 class="counter" data-target="50">0</h3>
-                <p>Projects Delivered</p>
+                <h3 class="counter" data-target="15">0</h3>
+                <p>Successful Deploys</p>
             </div>
             <div class="stat-item">
-                <h3 class="counter" data-target="12">0</h3>
-                <p>Years Experience</p>
+                <h3 class="counter" data-target="5000">0</h3>
+                <p>Hours of Innovation</p>
             </div>
             <div class="stat-item">
-                <h3 class="counter" data-target="98">0</h3>
-                <p>% Client Satisfaction</p>
+                <h3 class="counter" data-target="100">0</h3>
+                <p>% Client Retention</p>
             </div>
             <div class="stat-item">
                 <h3 class="counter" data-target="24">0</h3>
-                <p>/7 Support Active</p>
+                <p>/7 Agile Support</p>
             </div>
         </div>
     </section>
@@ -346,9 +446,11 @@
                     <h2>Get In Touch</h2>
                     <p>Ready to transform your business? Let's talk about your next project.</p>
                     <ul class="contact-details">
-                        <li>📍 123 Innovation Drive, Tech City</li>
-                        <li>📧 contact@iedetech.io</li>
-                        <li>📞 +1 (555) 123-4567</li>
+                        <li>📍 KNERA-119, Ashoka Road, Kaloor, 682017, Kerala, India.</li>
+                        <li>📧 <a href="mailto:info@iedetech.com"
+                                style="color:inherit; text-decoration:none;">info@iedetech.com</a></li>
+                        <li>📞 <a href="tel:+914843574185"
+                                style="color:inherit; text-decoration:none;">+91-484-3574185</a></li>
                     </ul>
                 </div>
                 <form class="contact-form">
@@ -387,9 +489,8 @@
                 Visitors: <span id="visitor-count" class="visitor-count">Loading...</span>
             </div>
             <div class="social-links">
-                <a href="#">LinkedIn</a>
-                <a href="#">Twitter</a>
-                <a href="#">GitHub</a>
+                <a href="https://www.linkedin.com/company/iede-technologies" target="_blank">LinkedIn</a>
+                <a href="https://github.com/p-njunction" target="_blank">GitHub</a>
             </div>
         </div>
     </footer>
@@ -402,6 +503,16 @@
     <a href="#contact" class="fab" aria-label="Contact Us">
         💬
     </a>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="cookie-banner">
+        <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.
+        </p>
+        <div class="cookie-actions">
+            <button id="accept-cookies" class="btn-primary btn-sm">Accept</button>
+            <button id="decline-cookies" class="btn-secondary btn-sm">Decline</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

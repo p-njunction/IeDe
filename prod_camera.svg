@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#f8fafc"/>
+  <rect x="120" y="100" width="160" height="100" rx="10" fill="#1e293b"/> <!-- Camera Body -->
+  <circle cx="200" cy="150" r="40" fill="#334155" stroke="#2563eb" stroke-width="4"/> <!-- Lens Outer -->
+  <circle cx="200" cy="150" r="20" fill="#0f172a"/> <!-- Lens Inner -->
+  <circle cx="210" cy="140" r="5" fill="rgba(255,255,255,0.5)"/> <!-- Glint -->
+  <rect x="140" y="200" width="120" height="20" fill="#475569"/> <!-- Mount -->
+</svg>

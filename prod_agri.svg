@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#f8fafc"/>
+  <path d="M200 60 L200 120" stroke="#cbd5e1" stroke-width="4"/> <!-- Antenna Mast -->
+  <rect x="160" y="120" width="80" height="100" rx="10" fill="#15803d"/> <!-- Body -->
+  <path d="M160 140 Q200 160 240 140" stroke="#22c55e" stroke-width="2" fill="none"/> <!-- Leaf accent -->
+  <rect x="190" y="220" width="20" height="40" fill="#64748b"/> <!-- Probe -->
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#1e293b"/>
+  <text x="20" y="30" font-family="monospace" fill="#94a3b8" font-size="14">FOV_ANALYSIS</text>
+  <!-- Camera View -->
+  <rect x="50" y="50" width="300" height="200" fill="none" stroke="#3b82f6" stroke-width="2"/>
+  <line x1="200" y1="150" x2="50" y2="50" stroke="#3b82f6" stroke-width="1" stroke-dasharray="4"/>
+  <line x1="200" y1="150" x2="350" y2="50" stroke="#3b82f6" stroke-width="1" stroke-dasharray="4"/>
+  <line x1="200" y1="150" x2="50" y2="250" stroke="#3b82f6" stroke-width="1" stroke-dasharray="4"/>
+  <line x1="200" y1="150" x2="350" y2="250" stroke="#3b82f6" stroke-width="1" stroke-dasharray="4"/>
+  
+  <!-- Bounding Box -->
+  <rect x="180" y="130" width="40" height="40" fill="none" stroke="#ef4444" stroke-width="2"/>
+  <text x="180" y="125" font-family="sans-serif" fill="#ef4444" font-size="10">DEFECT_DETECTED</text>
+</svg>

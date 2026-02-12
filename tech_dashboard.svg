@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#1e293b"/>
+  <text x="20" y="30" font-family="monospace" fill="#94a3b8" font-size="14">ANALYTICS_VIEW</text>
+  <!-- Graph -->
+  <path d="M50 250 L50 50" stroke="#475569" stroke-width="2"/>
+  <path d="M50 250 L350 250" stroke="#475569" stroke-width="2"/>
+  <polyline points="50,200 100,180 150,220 200,100 250,140 300,80 350,120" fill="none" stroke="#22c55e" stroke-width="3"/>
+  <rect x="250" y="60" width="100" height="40" rx="4" fill="#334155" opacity="0.8"/>
+  <text x="260" y="85" font-family="sans-serif" fill="#22c55e" font-size="12">Efficiency: 98%</text>
+</svg>

@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 30">
+  <path d="M10 5 Q20 5 20 15 Q20 25 10 25 M5 5 Q15 5 15 15 Q15 25 5 25" stroke="#76b900" stroke-width="2" fill="none"/>
+  <text x="30" y="22" font-family="sans-serif" font-weight="bold" font-size="20" fill="#76b900">NVIDIA</text>
+</svg>

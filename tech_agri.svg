@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#ecfdf5"/>
+  <text x="20" y="30" font-family="monospace" fill="#059669" font-size="14">SENSOR_CALIBRATION</text>
+  <!-- Soil Layers -->
+  <rect x="50" y="200" width="300" height="80" fill="#b45309" opacity="0.3"/>
+  <text x="60" y="240" font-family="sans-serif" fill="#92400e" font-size="12">Substrate_01</text>
+  
+  <!-- Probe -->
+  <rect x="180" y="80" width="40" height="180" fill="#fff" stroke="#059669" stroke-width="2"/>
+  <circle cx="200" cy="120" r="10" fill="#22c55e"/> <!-- Status LED -->
+  
+  <!-- Waves -->
+  <path d="M220 100 Q240 80 260 100" fill="none" stroke="#22c55e" stroke-width="2"/>
+  <path d="M230 90 Q245 75 260 90" fill="none" stroke="#22c55e" stroke-width="2"/>
+  <text x="270" y="95" font-family="sans-serif" fill="#059669" font-size="10">LoRaWAN Signal</text>
+</svg>
