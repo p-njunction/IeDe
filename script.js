@@ -100,51 +100,95 @@ document.addEventListener('DOMContentLoaded', () => {
     // Dark Mode Toggle
     const themeToggle = document.getElementById('theme-toggle');
     // Product Data
+    // Product Data
     const productData = {
         'IeDe Gateway X1': {
-            subtitle: "Universal IoT Gateway",
-            description: "The IeDe Gateway X1 is a robust, industrial-grade edge gateway designed to bridge the gap between legacy machinery and modern cloud platforms. It supports a wide range of protocols including MQTT, CoAP, Modbus, and HTTP, making it the perfect central hub for your diverse sensor network. With on-board edge processing capabilities, it filters and aggregates data locally, reducing bandwidth costs and latency.",
-            specs: ["Protocols: MQTT, CoAP, Modbus TCP/RTU, HTTP", "Connectivity: Wi-Fi, Ethernet, 4G LTE", "Processor: Dual-Core ARM Cortex-A7", "OS: Linux-based (Yocto)", "Power: 12-24V DC"],
+            subtitle: "Universal Industrial IoT Gateway",
+            description: "The IeDe Gateway X1 is a robust, industrial-grade edge gateway designed to bridge the gap between legacy machinery and modern cloud platforms. It acts as the central nervous system for your factory floor, translating diverse protocols into a unified stream. With on-board edge processing capabilities, it filters and aggregates data locally, reducing bandwidth costs and latency while ensuring critical alerts are processed in milliseconds, even without internet connectivity.",
+            specs: [
+                "Protocols: MQTT, CoAP, Modbus TCP/RTU, OPC UA, HTTP/HTTPS",
+                "Connectivity: Dual-Band Wi-Fi 6, Gigabit Ethernet (x2), 4G/5G LTE, Bluetooth 5.2",
+                "Processor: Quad-Core ARM Cortex-A72 @ 1.5GHz",
+                "Memory: 4GB LPDDR4 RAM, 32GB eMMC Storage",
+                "OS: Yocto Linux (Secure Boot Enabled)",
+                "Power: 9-36V DC Wide Range Input with Surge Protection",
+                "Environmental: -20°C to 70°C Operating Temp, IP30 Metal Case"
+            ],
             image: "prod_gateway.svg",
             thumbnails: ["tech_gateway.svg", "prod_gateway.svg"],
             tech: true
         },
         'DataSense Cloud': {
-            subtitle: "Real-time Analytics Dashboard",
-            description: "DataSense Cloud is a comprehensive visualization platform that turns raw sensor data into actionable insights. Monitor your fleet health, track environmental conditions, and set up automated alerts for anomalies. Its intuitive drag-and-drop interface allows you to create custom dashboards tailored to your specific operational needs.",
-            specs: ["Real-time Data Visualization", "Customizable Widgets", "Role-based Access Control", "Automated Email/SMS Alerts", "REST API for 3rd Party Integration"],
+            subtitle: "Enterprise Real-time Analytics Dashboard",
+            description: "DataSense Cloud is a comprehensive visualization platform that turns raw sensor data into actionable insights. It serves as your command center, allowing you to monitor fleet health, track environmental conditions, and analyze historical trends. Its intuitive drag-and-drop interface allows specific engineering teams to create custom dashboards tailored to their unique KPIs without writing a single line of code.",
+            specs: [
+                "Visualization: Real-time Time-Series Graphs, Heatmaps, Gauges",
+                "Alerting: Multi-channel (SMS, Email, Webhook, Slack Integration)",
+                "Security: Role-based Access Control (RBAC), SSO Support, End-to-End Encryption",
+                "Integration: REST API, GraphQL, Export to CSV/JSON/PDF",
+                "Scalability: Handles 1M+ data points per second",
+                "Deployment: SaaS or On-Premise/Private Cloud"
+            ],
             image: "prod_dashboard.svg",
             thumbnails: ["tech_dashboard.svg", "prod_dashboard.svg"],
             tech: true
         },
         'SecureEdge Module': {
-            subtitle: "Hardware Security Module",
-            description: "Security is paramount in the IoT capability. The SecureEdge Module provides hardware-based encryption and key storage, ensuring that your data remains tamper-proof from the sensor to the cloud. Ideally suited for critical infrastructure and sensitive industrial applications.",
-            specs: ["Encryption: AES-256, RSA-2048", "Secure Boot & Key Storage", "Interface: SPI, I2C", "Compliance: FIPS 140-2 Level 2"],
+            subtitle: "Hardware Security Module (HSM)",
+            description: "Security is the foundation of any reliable IoT ecosystem. The SecureEdge Module provides hardware-based encryption and tamper-resistant key storage, insuring that your device identity and data integrity are never compromised. It offloads cryptographic operations from the main processor, improving overall system performance while meeting the highest industry security standards.",
+            specs: [
+                "Encryption: Hardware AES-256, RSA-4096, ECC P-384",
+                "Key Storage: Secure Element for Private Keys & Certificates",
+                "Interface: High-speed SPI, I2C, ISO 7816",
+                "Compliance: FIPS 140-2 Level 3 Ready, Common Criteria EAL5+",
+                "Features: True Random Number Generator (TRNG), Secure Boot Support",
+                "Dimensions: Compact 4mm x 4mm WLCSP package"
+            ],
             image: "prod_module.svg",
             thumbnails: ["tech_module.svg", "prod_module.svg"],
             tech: true
         },
         'SmartEdge Controller': {
-            subtitle: "AI-Enabled PLC",
-            description: "The SmartEdge Controller combines the reliability of a traditional PLC with the intelligence of modern AI. Capable of running lightweight inference models locally, it can make split-second decisions based on visual or sensor inputs without relying on cloud connectivity.",
-            specs: ["AI Accelerator: Neural Processing Unit (NPU)", "IO: 8x Digital In, 8x Digital Out, 4x Analog In", "Programming: Python, C++, IEC 61131-3", "Mounting: DIN Rail"],
+            subtitle: "AI-Enabled Programmable Logic Controller",
+            description: "The SmartEdge Controller combines the rugged reliability of a traditional PLC with the intelligence of modern AI. Capable of running lightweight inference models locally (TensorFlow Lite), it can make split-second decisions based on visual or complex sensor inputs. This enables applications like visual quality inspection or predictive anomaly detection directly at the edge.",
+            specs: [
+                "AI Accelerator: Dedicated Neural Processing Unit (NPU) @ 2.0 TOPS",
+                "I/O: 8x Isolated Digital In, 8x Relay Out, 4x Analog In (4-20mA)",
+                "Programming: Python, C++, IEC 61131-3 (Ladder Logic)",
+                "Communication: RS-485, CAN Bus, Ethernet IP",
+                "Mounting: Standard DIN Rail Format",
+                "Safety: Watchdog Timer, Power-fail protection"
+            ],
             image: "prod_controller.svg",
             thumbnails: ["tech_controller.svg", "prod_controller.svg"],
             tech: true
         },
         'AgriSense Node': {
-            subtitle: "Long-Range Soil Monitor",
-            description: "Designed for vast agricultural fields, the AgriSense Node utilizes LoRaWAN technology to transmit soil moisture, temperature, and pH data over kilometers with minimal power consumption. Its ruggedized IP67 enclosure ensures durability in harsh weather conditions.",
-            specs: ["Comms: LoRaWAN 1.0.3", "Battery Life: 5+ Years", "Sensors: Capacitive Moisture, Temp, pH", "Range: Up to 15km (LoS)"],
+            subtitle: "Long-Range Agricultural Soil Monitor",
+            description: "Designed specifically for the vast and rugged terrain of agricultural fields, the AgriSense Node utilizes LoRaWAN technology to transmit soil moisture, temperature, and pH data over ranges up to 15km. Its ultra-low power design ensures years of maintenance-free operation, while its industrial-grade probe delivers lab-quality accuracy for precision irrigation.",
+            specs: [
+                "Communication: LoRaWAN 1.0.3 Class A/C",
+                "Battery Life: 5+ Years (1 transmission/hour) on user-replaceable Li-SOCl2",
+                "Sensors: Multi-depth Capacitive Moisture, Soil Temp, pH, EC",
+                "Range: Up to 15km (Line of Sight), 5km (Urban)",
+                "Enclosure: IP67 Waterproof & UV Resistant Polycarbonate",
+                "Installation: Plug-and-Play with screw anchor"
+            ],
             image: "prod_agri.svg",
             thumbnails: ["tech_agri.svg", "prod_agri.svg"],
             tech: true
         },
         'VisionAI Cam': {
-            subtitle: "Edge Computing Camera",
-            description: "VisionAI Cam is a smart camera system that processes video streams directly on the device. Perfect for automated quality control on assembly lines, intrusion detection, or safety monitoring, it sends only relevant metadata to the server, preserving bandwidth and privacy.",
-            specs: ["Resolution: 4K Ultra HD", "On-board AI: Object Detection, Face Recog", "Storage: SD Card + Cloud Sync", "Night Vision: IR Grid"],
+            subtitle: "Intelligent Edge Computing Camera",
+            description: "VisionAI Cam is a smart camera system that processes video streams directly on the device. Perfect for automated quality control on assembly lines, intrusion detection, or safety monitoring, it filters out the noise and sends only relevant metadata or alert clips to the server. This 'Privacy by Design' approach preserves bandwidth and ensures compliance with data protection regulations.",
+            specs: [
+                "Sensor: 8MP Sony IMX Sensor with HDR",
+                "Resolution: 4K Ultra HD @ 30fps",
+                "Processing: Quad-core AI Processor for Object Detection, Face Recog, LPR",
+                "Storage: 128GB MicroSD Card + Auto Cloud Sync",
+                "Night Vision: Adaptive IR Grid (20m range)",
+                "Connectivity: PoE (Power over Ethernet), Wi-Fi"
+            ],
             image: "prod_camera.svg",
             thumbnails: ["tech_camera.svg", "prod_camera.svg"],
             tech: true
@@ -154,39 +198,39 @@ document.addEventListener('DOMContentLoaded', () => {
     // Case Study Data
     const caseStudyData = {
         'factory': {
-            title: "Smart Factory Automation",
+            title: "Smart Factory Automation Upgrade",
             badge: "Industrial IoT",
             headerImage: "portfolio_factory.svg",
-            challenge: "A leading automotive parts manufacturer faced frequent unplanned downtime due to motor failures on their assembly line. Manual inspections were infrequent and often missed early warning signs of overheating or vibration anomalies.",
-            solution: "IeDe Technologies implemented a comprehensive sensor network using our **IeDe Gateway X1** and vibration sensors. We deployed local edge processing to analyze vibration patterns in real-time. Data was aggregated on our **DataSense Cloud** for trend analysis and predictive maintenance alerts.",
+            challenge: "A leading automotive parts manufacturer faced frequent unplanned downtime due to unpredictable motor failures on their main assembly line. Manual vibration analysis inspections were infrequent (monthly) and labor-intensive, often missing early warning signs of bearing wear or overheating, leading to costly production stoppages.",
+            solution: "IeDe Technologies implemented a comprehensive sensor network using our **IeDe Gateway X1** paired with high-frequency wireless vibration sensors. We deployed local edge processing algorithms to analyze FFT (Fast Fourier Transform) vibration patterns in real-time. Data was aggregated on our **DataSense Cloud** for long-term trend analysis, and we integrated with their existing ERP system to trigger automatic work orders when anomalies were detected.",
             results: [
-                "**40% Reduction** in unplanned downtime within the first 6 months.",
-                "**15% Increase** in overall equipment effectiveness (OEE).",
-                "Saved approximately **$250,000** annually in maintenance and lost production costs."
+                "**40% Reduction** in unplanned downtime within the first 6 months of deployment.",
+                "**15% Increase** in Overall Equipment Effectiveness (OEE) due to optimized maintenance schedules.",
+                "**ROI achieved in 3 months** by saving approximately $250,000 annually in maintenance and lost production costs."
             ]
         },
         'agri': {
-            title: "Precision Agriculture System",
+            title: "Precision Agriculture & Irrigation System",
             badge: "AgriTech",
             headerImage: "portfolio_agri.svg",
-            challenge: "A large-scale grape vineyard struggled with water waste and uneven crop quality. Their blanket irrigation approach resulted in over-watering some zones while under-watering others, leading to fungal diseases and yield loss.",
-            solution: "We deployed 500+ **AgriSense Nodes** across the vineyard, communicating via a private LoRaWAN network. The system monitored soil moisture at 3 distinct depths. This data fed into an automated irrigation control system that triggered watering only when specific zones dropped below optimal moisture levels.",
+            challenge: "A large-scale grape vineyard struggled with water resource management and uneven crop quality. Their traditional timer-based blanket irrigation approach resulted in over-watering low-lying zones while under-watering hilltops, leading to fungal diseases in some areas and moisture stress in others, affecting the vintage consistency.",
+            solution: "We deployed 500+ **AgriSense Nodes** across the topography of the vineyard, communicating via a private, solar-powered LoRaWAN network gateway. The system monitored soil moisture at 3 distinct depths (10cm, 30cm, 60cm). This real-time data fed into an automated irrigation control system that triggered valve actuators to water specific zones only when precise moisture thresholds were breached.",
             results: [
-                "**25% Savings** in water usage per season.",
-                "**10% Increase** in grape yield quality (Brix levels).",
-                "Significant reduction in fungicide usage due to controlled humidity."
+                "**25% Savings** in water usage per season, conserving a critical resource.",
+                "**10% Increase** in grape yield quality (Brix levels) due to optimal stress management.",
+                "Significant reduction in fungicide usage due to controlled humidity levels in canopy."
             ]
         },
         'city': {
-            title: "Urban Traffic Management",
+            title: "Urban Traffic Management System",
             badge: "Smart City",
             headerImage: "portfolio_city.svg",
-            challenge: "The city's downtown district suffered from chronic gridlock during rush hours. Static traffic light timers were unable to adapt to fluctuating traffic volumes, causing long queues and increased emissions.",
-            solution: "IeDe installed **VisionAI Cams** at 20 major intersections. The cameras utilized edge AI to count vehicles and detect queue lengths in real-time. This data was sent to a central **SmartEdge Controller** which dynamically adjusted traffic light green-times to prioritize high-congestion lanes.",
+            challenge: "The city's downtown commercial district suffered from chronic traffic gridlock during rush hours. The existing static traffic light timers were unable to adapt to real-world fluctuating traffic volumes, causing long queues, driver frustration, and increased carbon emissions from idling vehicles.",
+            solution: "IeDe installed **VisionAI Cams** at 20 major intersections. The cameras utilized on-device edge AI models to count vehicles, classify types (car, truck, bus), and detect queue lengths in real-time. This anonymized metadata was transmitted to a central **SmartEdge Controller** which dynamically adjusted traffic light green-times using an adaptive algorithm to prioritize high-congestion lanes and create 'green waves'.",
             results: [
-                "**30% Reduction** in average wait times at intersections.",
-                "**12% Decrease** in vehicle idling emissions.",
-                "Improved emergency vehicle response times by clearing paths automatically."
+                "**30% Reduction** in average wait times at key intersections during peak hours.",
+                "**12% Decrease** in vehicle idling emissions, contributing to city sustainability goals.",
+                "Improved emergency vehicle response times by automatically detecting sirens and clearing paths."
             ]
         }
     };
